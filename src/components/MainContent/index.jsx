@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState, useRef } from "react";
-import { ContainerMainContent } from "./style";
+import { ContainerDonutGraphic, ContainerMainContent, Table, TableCell, TableHead, TableHeaderCell, TableRow } from "./style";
 import axios from "axios";
 import { Chart } from 'chart.js/auto';
 
@@ -33,7 +33,7 @@ function MainContent() {
           {
             label: 'Participação',
             data: values,
-            backgroundColor: ['red', 'orange', 'yellow', 'green', 'blue'], // Defina as cores conforme necessário
+            backgroundColor: ['#36a2eb', '#fe6383', '#4ac0c0', '#ff9f40', ' #9966ff', '#ffcc56','#cacbcf'], 
           }
         ]
       };
@@ -45,14 +45,24 @@ function MainContent() {
           responsive: true,
           plugins: {
             legend: {
-              position: 'top',
+              position: 'right',
+              labels: {
+                font: {
+                  size: 17, 
+                  family: 'Arial',
+                },
+              },
             },
             title: {
               display: true,
-              text: 'Participação dos Usuários'
-            }
-          }
-        }
+              text: 'Participação dos Usuários',
+              font: {
+                size: 20, 
+                family: 'Arial',
+              },
+            },
+          },
+        },
       };
 
       if (chartInstance) {
@@ -67,32 +77,32 @@ function MainContent() {
   return (
     <ContainerMainContent>
       <div>
-        <table border="1">
-          <thead>
-            <tr>
-              <th>Id</th>
-              <th>Primeiro Nome</th>
-              <th>Ultimo Nome</th>
-              <th>Participacao</th>
-            </tr>
-          </thead>
+        <Table>
+          <TableHead>
+            <TableRow>
+              <TableHeaderCell>Id</TableHeaderCell>
+              <TableHeaderCell>Primeiro Nome</TableHeaderCell>
+              <TableHeaderCell>Ultimo Nome</TableHeaderCell>
+              <TableHeaderCell>Participação</TableHeaderCell>
+            </TableRow>
+          </TableHead>
           <tbody>
             {users.map((user, index) => {
               return (
-                <tr key={index}>
-                  <td>{index + 1}</td>
-                  <td>{user.first_name}</td>
-                  <td>{user.last_name}</td>
-                  <td>{user.participation}%</td>
-                </tr>
+                <TableRow key={index}>
+                  <TableCell>{index + 1}</TableCell>
+                  <TableCell>{user.first_name}</TableCell>
+                  <TableCell>{user.last_name}</TableCell>
+                  <TableCell>{user.participation}%</TableCell>
+                </TableRow>
               );
             })}
           </tbody>
-        </table>
+        </Table>
       </div>
-      <div>
+      <ContainerDonutGraphic>
         <canvas ref={chartRef}></canvas>
-      </div>
+      </ContainerDonutGraphic>
     </ContainerMainContent>
   );
 }

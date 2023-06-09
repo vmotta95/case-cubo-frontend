@@ -5,11 +5,12 @@ display: flex;
 justify-content: center;
 align-items: center;
 width: 100%;
-height: 20vh;
+min-height: 20vh;
 background-color: #01b8e2;
 `
 export const FormHeader = styled.form`
 display: flex;
+flex-wrap: wrap;
 gap:20px;
 `
 export const InputHeader = styled.input`

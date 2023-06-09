@@ -5,7 +5,7 @@ function CentralText() {
   return (
     <ContainerCentralText>
         <h1>DATA</h1>
-        <p>Banco de dados sobre usurs da Cubo</p>
+        <p>Banco de dados sobre usuers da Cubo</p>
     </ContainerCentralText>
   )
 }
