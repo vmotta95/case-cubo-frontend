@@ -26,7 +26,7 @@ function Header() {
   const createUser = async (event) => {
     event.preventDefault();
     try {
-      await axios.post("http://localhost:3003/users/cadastro", {
+      await axios.post("https://vmotta-case-cubo-backend.onrender.com/users/cadastro", {
         name: firstName,
         nickname: lastName,
         participation: number,

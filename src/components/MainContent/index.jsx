@@ -11,7 +11,7 @@ function MainContent() {
 
   const getAllUsers = async () => {
     try {
-      const result = await axios.get("http://localhost:3003/users");
+      const result = await axios.get("https://vmotta-case-cubo-backend.onrender.com/users");
       setUsers(result.data);
     } catch (error) {
       console.log(error);
@@ -33,7 +33,7 @@ function MainContent() {
           {
             label: 'Participação',
             data: values,
-            backgroundColor: ['#36a2eb', '#fe6383', '#4ac0c0', '#ff9f40', ' #9966ff', '#ffcc56','#cacbcf'], 
+            backgroundColor: ['#36a2eb', '#fe6383', '#4ac0c0', '#ff9f40', ' #9966ff', '#ffcc56','#cacbcf','#5fc46d','#ff6383','#9ad3dc','#ffd35e' ], 
           }
         ]
       };
