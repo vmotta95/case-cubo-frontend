@@ -1,6 +1,9 @@
 
 # Case Cubo Frontend
 
+![image](https://github.com/vmotta95/case-cubo-frontend/assets/102388553/3db91cae-8bd8-438b-9bab-a93df29d5073)
+
+
 ## 📲 Link do deploy
 
 Use a aplicação em [https://vmotta-case-cubo-frontend.onrender.com]() 
